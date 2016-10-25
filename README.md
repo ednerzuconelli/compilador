@@ -3,7 +3,7 @@ compiladorModulaIIc
 
 Inicio aqui e vamos add ai galera
 
-Como compilar o lex
+Como compilar o lex:
   lex modula.l
 
 Como compilar:

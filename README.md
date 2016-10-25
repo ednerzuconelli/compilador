@@ -11,3 +11,7 @@ Como compilar:
   
 Como Executar
   ./modula < arquivo
+
+
+Grmática do módula 2:
+  http://cui.unige.ch/db-research/Enseignement/analyseinfo/Modula2/BNFindex.html

@@ -1,0 +1,20 @@
+MODULE  Vetores;
+     FROM InOut IMPORT ReadCard,WriteCard,WriteLn,WriteString;
+      VAR    Index      :  CARDINAL;
+             Automoveis :  ARRAY  [1..12]  OF  CARDINAL;
+      BEGIN
+        FOR  Index  :=  1  TO  12   DO
+          Automoveis [Index] := Index + 10;
+        END;
+        Automoveis [7] := 54;
+        WriteString ( " Este é o primeiro programa com um vetor. ");
+        WriteLn;
+        WriteLn;                
+        FOR  Index  :=  1  TO  12  DO
+          WriteString( " Numero do Automovel " );
+          WriteCard( Index , 3);
+          WriteString( " Possui o valor de " );
+          WriteCard( Automoveis [Index] , 3);
+          WriteLn;
+        END;
+    END  Vetores.

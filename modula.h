@@ -5,6 +5,10 @@
 #define OPERADOR_RELACIONAL 5;
 #define SIMBOLOS_OBRIGATORIOS 6;
 #define SIMBOLOS_ALTERNATIVOS 7;
+#define DECIMAL 8;
+#define OCTAL 9;
+#define HEXADECIMAL 10;
+
 
 
 

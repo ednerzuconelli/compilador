@@ -13,16 +13,26 @@
 
 [a-zA-Z][_a-zA-Z0-9]*	return 	IDENTIFICADOR;
 
+
+
+\"(\\.|[^"])*\" 	return 	STRING;
+
+\'(\\.|[^"])\'   	return 	ONECARACTER;
+
 [ \n\t]			;
 
 .			printf("caracter inexperado\n");
 
-"=" | "#" | "<>" | "<" | "<=" | ">" | ">=" | "IN"  return OPERADOR; 
+"=" | "#" | "<>" | "<" | "<=" | ">" | ">=" | "IN"  return OPERADOR_RELACIONAL; 
+
+"+" | "-" return OPERADOR;
+
+"*" | "/" | "DIV" | "MOD" | "AND" | "&" return OPERADOR_FACTOR;
 
 "["|"(!"|"]"|"!)"|""|"(:"|""|":)"|"|"|"!" return SIMBOLOS_ALTERNATIVOS; 
 
 [0-9]* return DECIMAL;
-[0-7]*B return OCTAL;
+[0-7]*B |[0-7]*C return OCTAL;
 [0-9A-F]*H return HEXADECIMAL;
                       
               	

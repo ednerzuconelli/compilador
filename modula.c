@@ -21,6 +21,8 @@ void qualident();
 void const_expression();
 
 void qualident(){
+
+
 	reconhecerNToken(IDENTIFICADOR);
 
 	if(strcmp(lookahead,".")==0){
@@ -29,16 +31,46 @@ void qualident(){
 	}
 }
 
-void number(){
 
+
+void number(){
+	char* lah;
+
+	if(ntoken==DECIMAL){
+		
+		 reconhecerNToken(DECIMAL);
+
+		if(strcmp(lookahead,".")==0){
+			reconhecerToken(".");
+			reconhecerNToken(DECIMAL);
+		}
+	}
+
+	if(ntoken==OCTAL){
+		reconhecerNToken(OCTAL);
+	}
+
+	if(ntoken==HEXADECIMAL){
+		reconhecerNToken(HEXADECIMAL);
+	}
 }
 
 void string(){
+	if(ntoken==STRING){
+		reconhecerNToken(STRING);
+	}
 
+	if(ntoken==ONECARACTER){
+		reconhecerNToken(ONECARACTER);
+	}
 }
 
-void set(){
+void element(){}
 
+void set(){
+	reconhecerToken("{");
+	//element
+	reconhecerToken("}");
 }
 
 
@@ -54,7 +86,7 @@ void const_factor(){
 	}	
 
 	if(ntoken==STRING||ntoken==ONECARACTER){
-		number();
+		string();
 	}
 
 	if(strcmp(lookahead,"{")==0)
@@ -123,7 +155,7 @@ void definition(){
 	if(strcmp(lookahead,"CONST")==0){
 		reconhecerToken("CONST");
 		while(ntoken==IDENTIFICADOR){
-		//const declaration
+		constant_declaration();
 		reconhecerToken(";");
 		}
 	}

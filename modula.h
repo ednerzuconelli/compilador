@@ -11,6 +11,8 @@
 #define OPERADOR_FACTOR 11
 #define STRING 12
 #define ONECARACTER 13
+#define COMENTARIO 14
+#define SEPARADOR 15
 
 
 

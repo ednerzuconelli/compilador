@@ -13,7 +13,7 @@
 
 [a-zA-Z][_a-zA-Z0-9]*	return 	IDENTIFICADOR;
 
-
+"(*"(\\.|[^"])*"*)" 	return 	COMENTARIO;
 
 \"(\\.|[^"])*\" 	return 	STRING;
 
@@ -21,7 +21,9 @@
 
 [ \n\t]			;
 
-.			printf("caracter inexperado\n");
+";"|","|":"|".."|":="|"("|")"|"["|"]"                     return SEPARADOR ;
+
+        
 
 "=" | "#" | "<>" | "<" | "<=" | ">" | ">=" | "IN"  return OPERADOR_RELACIONAL; 
 
